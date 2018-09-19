@@ -1,0 +1,48 @@
+web:
+  host: ${web.host:-postal.example.com}
+  protocol: ${web.protocol:-https}
+
+fast_server:
+  enabled: ${fast_server.enabled:-false}
+  bind_address: ${fast_server.bind_address:-}
+
+general:
+  use_ip_pools: ${general.use_ip_pools:-false}
+
+main_db:
+  host: ${main_db.host:-127.0.0.1}
+  username: ${main_db.username:-postal}
+  password: ${main_db.password:-p0stalpassw0rd}
+  database: ${main_db.database:-postal}
+
+message_db:
+  host: ${message_db.host:-127.0.0.1}
+  username: ${message_db.username:-postal}
+  password: ${message_db.password:-p0stalpassw0rd}
+  prefix: ${message_db.prefix:-postal}
+
+rabbitmq:
+  host: ${rabbitmq.host:-127.0.0.1 }
+  username: ${rabbitmq.username:-rabbitmq}
+  password: ${rabbitmq.password:-p0stalpassw0rd}
+  vhost: ${rabbitmq.vhost:-/postal}
+
+dns:
+  mx_records:
+    - mx.postal.example.com
+  smtp_server_hostname: postal.example.com
+  spf_include: spf.postal.example.com
+  return_path: rp.postal.example.com
+  route_domain: routes.postal.example.com
+  track_domain: track.postal.example.com
+
+smtp:
+  host: 127.0.0.1
+  port: 2525
+  username: # Complete when Postal is running and you can
+  password: # generate the credentials within the interface.
+  from_name: Postal
+  from_address: postal@yourdomain.com
+
+rails:
+  secret_key: 506571ecb2af273051687b1fa082822f19dded712201cbc0df508c53ce95b4ad72df5aac2177d7b90a97c4488006d16a503f59023476daae8a66f45b9e64854cbef577aec30681e0ad49d4dc0e547a6c55c30358158d426c07aa197eb25c3955a68dcd44c67a8d421a718e18d87001e7000201c8a05e2d1eb85b7b9f05e726d7
