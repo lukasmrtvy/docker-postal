@@ -5,6 +5,11 @@ web:
 fast_server:
   enabled: ${fast_server.enabled:-false}
   bind_address: ${fast_server.bind_address:-}
+  port: 80 ${fast_server.port:-80}
+  ssl_port: ${fast_server.ssl_port:-}
+  proxy_protocol: ${fast_server.proxy_protocol:-false}
+  default_private_key_path: # Defaults to config/fast_server.key
+  default_tls_certificate_path: # Defaults to config/fast_server.cert
 
 general:
   use_ip_pools: ${general.use_ip_pools:-false}
