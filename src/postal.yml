@@ -1,6 +1,11 @@
 web:
   host: ${web.host:-postal.example.com}
   protocol: ${web.protocol:-https}
+  
+web_server:
+  bind_address: 127.0.0.1
+  port: 5000
+  max_threads: 5
 
 fast_server:
   enabled: ${fast_server.enabled:-false}
@@ -13,21 +18,30 @@ fast_server:
 
 general:
   use_ip_pools: ${general.use_ip_pools:-false}
-
+  
+logging:
+  stdout: false
+  root: # Automatically determined based on config root
+  max_log_file_size: 20
+  max_log_files: 10
+    
 main_db:
   host: ${main_db.host:-127.0.0.1}
+  port: ${main_db.port:-3306}
   username: ${main_db.username:-postal}
   password: ${main_db.password:-p0stalpassw0rd}
   database: ${main_db.database:-postal}
 
 message_db:
   host: ${message_db.host:-127.0.0.1}
+  port: ${message_db.port:-3306}
   username: ${message_db.username:-postal}
   password: ${message_db.password:-p0stalpassw0rd}
   prefix: ${message_db.prefix:-postal}
 
 rabbitmq:
-  host: ${rabbitmq.host:-127.0.0.1 }
+  host: ${rabbitmq.host:-127.0.0.1}
+  port: ${rabbitmq.port:-5672}
   username: ${rabbitmq.username:-rabbitmq}
   password: ${rabbitmq.password:-p0stalpassw0rd}
   vhost: ${rabbitmq.vhost:-/postal}
@@ -48,6 +62,25 @@ smtp:
   password: # generate the credentials within the interface.
   from_name: ${smtp.from_name:-Postal}
   from_address: ${smtp.from_address:-postal@yourdomain.com}
+  tls_enabled: false
+  tls_certificate_path: # Defaults to config/smtp.cert
+  tls_private_key_path: # Defaults to config/smtp.key
+  tls_ciphers:
+  ssl_version: SSLv23
+  proxy_protocol: false
+  log_connect: true
+  strip_received_headers: false
+  max_message_size: 14 # size in Megabytes
 
 rails:
   secret_key: ${rails.secret_key:-$(openssl rand -base64 32)}
+
+spamd:
+  enabled: false
+  host: 127.0.0.1
+  port: 783
+
+clamav:
+  enabled: false
+  host: 127.0.0.1
+  port: 2000
