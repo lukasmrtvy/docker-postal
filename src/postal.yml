@@ -37,12 +37,12 @@ dns:
   track_domain: track.postal.example.com
 
 smtp:
-  host: 127.0.0.1
-  port: 2525
+  host: ${smtp.host:-127.0.0.1}
+  port: ${smtp.port:-2525}
   username: # Complete when Postal is running and you can
   password: # generate the credentials within the interface.
-  from_name: Postal
-  from_address: postal@yourdomain.com
+  from_name: ${smtp.from_name:-Postal}
+  from_address: ${smtp.from_address:-postal@yourdomain.com}
 
 rails:
-  secret_key: 506571ecb2af273051687b1fa082822f19dded712201cbc0df508c53ce95b4ad72df5aac2177d7b90a97c4488006d16a503f59023476daae8a66f45b9e64854cbef577aec30681e0ad49d4dc0e547a6c55c30358158d426c07aa197eb25c3955a68dcd44c67a8d421a718e18d87001e7000201c8a05e2d1eb85b7b9f05e726d7
+  secret_key: ${rails.secret_key:-$(openssl rand -base64 32)}
