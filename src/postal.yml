@@ -29,12 +29,12 @@ rabbitmq:
 
 dns:
   mx_records:
-    - mx.postal.example.com
-  smtp_server_hostname: postal.example.com
-  spf_include: spf.postal.example.com
-  return_path: rp.postal.example.com
-  route_domain: routes.postal.example.com
-  track_domain: track.postal.example.com
+    - ${dns.mx_records:-mx.postal.example.com}
+  smtp_server_hostname: ${dns.smtp_server_hostname:-postal.example.com}
+  spf_include: ${dns.spf_include:-spf.postal.example.com}
+  return_path: ${dns.return_path:-rp.postal.example.com}
+  route_domain: ${dns.route_domain:-routes.postal.example.com}
+  track_domain: ${dns.track_domain:-track.postal.example.com}
 
 smtp:
   host: ${smtp.host:-127.0.0.1}
