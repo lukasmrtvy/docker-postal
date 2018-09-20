@@ -5,7 +5,7 @@ if [ ${DB_MIGRATE,,} == true];then
 fi
 
 if [ "${USER_CREATE,,}" == true]; then
-   postal make-user
+   /opt/postal/bin/postal make-user
 fi 
 
 TODO
