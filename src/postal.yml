@@ -3,8 +3,8 @@ web:
   protocol: ${web.protocol:-https}
   
 web_server:
-  bind_address: 127.0.0.1
-  port: 5000
+  bind_address: ${web_server.bind_address:-127.0.0.1}
+  port: ${web_server.port:-5000}
   max_threads: 5
 
 fast_server:
@@ -20,10 +20,10 @@ general:
   use_ip_pools: ${general.use_ip_pools:-false}
   
 logging:
-  stdout: false
+  stdout: ${logging.stdout:-true}
   root: # Automatically determined based on config root
-  max_log_file_size: 20
-  max_log_files: 10
+  max_log_file_size: ${logging.max_log_file_size:-10}
+  max_log_files: ${logging.max_log_files:-10}
     
 main_db:
   host: ${main_db.host:-127.0.0.1}
@@ -76,11 +76,11 @@ rails:
   secret_key: ${rails.secret_key:-$(openssl rand -base64 32)}
 
 spamd:
-  enabled: false
-  host: 127.0.0.1
-  port: 783
+  enabled: ${clamav.spamd:-false}
+  host: ${clamav.host:-127.0.0.1}
+  port: ${clamav.host:-783}
 
 clamav:
-  enabled: false
-  host: 127.0.0.1
-  port: 2000
+  enabled: ${clamav.enabled:-false}
+  host: ${clamav.host:-127.0.0.1}
+  port: ${clamav.port:-2000}
