@@ -11,6 +11,10 @@ docker run -d \
 -e PASS=
 lukasmrtvy/postal:latest
 ```
+https://github.com/atech/postal/wiki/Spam-&-Virus-Checking
+```
+docker run -d clamav
+docker run -d spamd
 
 
 ```
