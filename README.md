@@ -5,6 +5,17 @@
 ```
 docker run -d \
 --restart always \
+--name postal
+-e DB_MIGRATE="true"
+-e USER=
+-e PASS=
+lukasmrtvy/postal:latest
+```
+
+
+```
+docker run -d \
+--restart always \
 --name postal-mariadb \
 -e MYSQL_ROOT_PASSWORD=root \
 -e MYSQL_DATABASE=postal \
