@@ -37,5 +37,5 @@ docker run -d \
 -e RABBITMQ_DEFAULT_USER=postal \
 -e RABBITMQ_DEFAULT_PASS=postal \
 -e RABBITMQ_DEFAULT_VHOST=postal \
-rabbit:3.7.7-alpine
+rabbitmq:3.7.7-alpine
 ```
