@@ -13,8 +13,8 @@ lukasmrtvy/postal:latest
 ```
 https://github.com/atech/postal/wiki/Spam-&-Virus-Checking
 ```
-docker run -d -p 3310:3310 dinkel/clamavd
-docker run -d -p 783:783 dinkel/spamassassin
+docker run -d --restart always --name clamav -p 3310:3310 dinkel/clamavd
+docker run -d --restart always --name spamd -p 783:783  dinkel/spamassassin
 ```
 
 ```
