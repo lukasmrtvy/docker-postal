@@ -33,6 +33,8 @@ COPY /scripts/supervisord.conf /
 
 RUN chmod +x /entrypoint.sh
 
+RUN chown -R ${USER}:${GROUP} /opt/postal/
+
 USER postal
 
 ENTRYPOINT ["/entrypoint.sh"]
