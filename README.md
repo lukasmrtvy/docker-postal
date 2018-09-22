@@ -8,7 +8,8 @@ docker run -d \
 --network my-bridge \
 --name postal \
 -p 5000:5000 \
--e DB_MIGRATE="true" \
+-e DB_MIGRATE=true \
+-e INIT_CONFIG=true \
 -e main_db.host=postal-rabbit \
 -e main_db.port=3306 \
 -e main_db.database=postal \
