@@ -1,5 +1,12 @@
 FROM alpine:3.8
 
+ENV UID 1337
+ENV GID 1337
+ENV USER postal
+ENV GROUP postal
+
+RUN   addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP} && \ 
+
 RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor mariadb-client
 
 RUN mkdir -p /opt/postal && git clone https://github.com/atech/postal /opt/postal
