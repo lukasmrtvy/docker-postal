@@ -5,9 +5,9 @@ export SD_PASS="${SD_PASS:-admin}"
 
 if [ "${INIT_CONFIG,,}" == true ];then
   eval "cat <<EOF
-    $(</opt/postal/config/postal.template.yaml)
+    $(</opt/postal/config/postal.template.yml)
 EOF
-  " | tee /opt/postal/config/postal.yaml 2> /dev/null
+  " | tee /opt/postal/config/postal.yml 2> /dev/null
 fi
 
 if [ "${DB_MIGRATE,,}" == true ];then
