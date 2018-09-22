@@ -19,6 +19,8 @@ RUN /opt/postal/bin/postal bundle /opt/postal/vendor/bundle
 
 #RUN cat /opt/postal/config/postal.yml
 
+COPY /src/postal.template.yml /opt/postal/config/
+
 COPY /scripts/entrypoint.sh /
 COPY /scripts/supervisord.conf /
 
