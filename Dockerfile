@@ -5,7 +5,7 @@ ENV GID 1337
 ENV USER postal
 ENV GROUP postal
 
-RUN   addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP} && \ 
+RUN   addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP} 
 
 RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor mariadb-client
 
@@ -32,6 +32,8 @@ COPY /scripts/entrypoint.sh /
 COPY /scripts/supervisord.conf /
 
 RUN chmod +x /entrypoint.sh
+
+USER postal
 
 ENTRYPOINT ["/entrypoint.sh"]
 
