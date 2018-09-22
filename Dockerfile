@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor
+RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor mariadb-client
 
 RUN mkdir -p /opt/postal && git clone https://github.com/atech/postal /opt/postal
 
