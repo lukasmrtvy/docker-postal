@@ -73,7 +73,7 @@ smtp:
   max_message_size: ${SMTP_MAX_MEESAGE_SIZE:-14}
 
 rails:
-  environment: ${RAILS.ENVIRONMENT:-production}
+  environment: ${RAILS_ENVIRONMENT:-production}
   secret_key: ${RAILS_SECRET_KEY:-$(openssl rand -base64 32)}
 
 spamd:
