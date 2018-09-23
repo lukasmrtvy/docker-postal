@@ -8,6 +8,7 @@ if [ "${INIT_CONFIG,,}" == true ];then
     $(</opt/postal/config/postal.template.yml)
 EOF
   " | tee /opt/postal/config/postal.yml 2> /dev/null
+  /opt/postal/bin/postal initialize-config
 fi
 
 if [ "${DB_MIGRATE,,}" == true ];then
