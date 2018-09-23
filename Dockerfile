@@ -20,6 +20,11 @@ RUN apk add mariadb-dev
 
 RUN bundle config build.nokogiri --use-system-libraries --with-xml2-include=/usr/include/libxml2
 
+RUN echo "" >> /opt/postal/Gemfile
+RUN echo "gem 'bigdecimal'" >> /opt/postal/Gemfile
+RUN echo "gem 'etc'" >> /opt/postal/Gemfile
+RUN echo "gem 'tzinfo-data'" >> /opt/postal/Gemfile
+
 RUN /opt/postal/bin/postal bundle /opt/postal/vendor/bundle
 
 #RUN  /opt/postal/bin/postal initialize-config
