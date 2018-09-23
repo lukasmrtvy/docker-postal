@@ -42,7 +42,7 @@ RUN chown -R ${USER}:${GROUP} /opt/postal/
 
 RUN apk add --no-cache libcap 
 
-RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/ruby
+RUN setcap 'cap_net_bind_service=+ep' /usr/bin/ruby
 
 USER postal
 
