@@ -23,7 +23,7 @@ docker run -d \
 -e MESSAGE_DB_USERNAME=postal \
 -e MESSAGE_DB_PASSWORD=postal \
 -e RABBITMQ_HOST=postal-rabbit \
--e RABBITMQ_PORT=5673 \
+-e RABBITMQ_PORT=5672 \
 -e RABBITMQ_USERNAME=postal \
 -e RABBITMQ_PASSWORD=postal \
 -e RABBITMQ_VHOST.vhost=postal \
