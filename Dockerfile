@@ -40,6 +40,8 @@ RUN chmod +x /entrypoint.sh
 
 RUN chown -R ${USER}:${GROUP} /opt/postal/
 
+RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/ruby
+
 USER postal
 
 ENTRYPOINT ["/entrypoint.sh"]
