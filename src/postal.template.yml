@@ -41,7 +41,7 @@ message_db:
 
 rabbitmq:
   host: ${RABBITMQ_HOST:-127.0.0.1}
-  port: ${RABBITMQ_PORT:-5673}
+  port: ${RABBITMQ_PORT:-5672}
   username: ${RABBITMQ_USERNAME:-rabbitmq}
   password: ${RABBITMQ_PASSWORD:-p0stalpassw0rd}
   vhost: ${RABBITMQ_VHOST:-/postal}
