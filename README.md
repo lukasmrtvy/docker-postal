@@ -10,6 +10,7 @@ docker run -d \
 -p 5000:5000 \
 -e DB_MIGRATE=true \
 -e INIT_CONFIG=true \
+-e WEB_SERVER_BIND_ADDRESS=0.0.0.0 \
 -e USER_CREATE=true \
 -e MAIN_DB_HOST=postal-mariadb \
 -e MAIN_DB_PORT=3306 \
