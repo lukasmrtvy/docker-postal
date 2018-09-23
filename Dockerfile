@@ -40,6 +40,8 @@ RUN chmod +x /entrypoint.sh
 
 RUN chown -R ${USER}:${GROUP} /opt/postal/
 
+RUN apk add --no-cache libcap 
+
 RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/ruby
 
 USER postal
