@@ -5,7 +5,7 @@ export SD_PASS="${SD_PASS:-admin}"
 
 if [ "${INIT_CONFIG,,}" == true ];then
     eval "cat <<-EOF
-    $(</opt/postal/config/postal.template.yml)
+$(</opt/postal/config/postal.template.yml)
 EOF
   " | tee /opt/postal/config/postal.example.yml 2> /dev/null
   /opt/postal/bin/postal initialize-config
