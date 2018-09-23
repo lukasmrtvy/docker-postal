@@ -51,7 +51,7 @@ dns:
     - ${DNS_MX_RECORDS:-mx.postal.example.com}
   smtp_server_hostname: ${DNS_SMTP_SERVER_HOSTANME:-postal.example.com}
   spf_include: ${DNS_SPF_INCLUDE:-spf.postal.example.com}
-  return_path: ${DNS.RETURN_PATH:-rp.postal.example.com}
+  return_path: ${DNS_RETURN_PATH:-rp.postal.example.com}
   route_domain: ${DNS_ROUTE_DOMAIN:-routes.postal.example.com}
   track_domain: ${DNS_TRACK_DOMAIN:-track.postal.example.com}
 
