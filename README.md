@@ -11,12 +11,12 @@ docker run -d \
 -e DB_MIGRATE=true \
 -e INIT_CONFIG=true \
 -e USER_CREATE=true \
--e MAIN_DB_HOST=postal-rabbit \
+-e MAIN_DB_HOST=postal-mariadb \
 -e MAIN_DB_PORT=3306 \
 -e MAIN_DB_DATABASE=postal \
 -e MAIN_DB_USERNAME=postal \
 -e MAIN_DB_PASSWORD=postal \
--e MESSAGE_DB_HOST=postal-rabbit \
+-e MESSAGE_DB_HOST=postal-mariadb \
 -e MESSAGE_DB_PORT=3306 \
 -e MESSAGE_DB_PERFIX=postal \
 -e MESSAGE_DB_USERNAME=postal \
