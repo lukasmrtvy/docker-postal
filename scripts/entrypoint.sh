@@ -20,4 +20,8 @@ if [ "${USER_CREATE,,}" == true ]; then
    /opt/postal/bin/postal make-user
 fi 
 
+if [ "${ACME,,}" == true ]; then
+  postal register-lets-encrypt youremail@example.comn
+fi
+
 exec "$@"
