@@ -7,7 +7,7 @@ if [ "${INIT_CONFIG,,}" == true ];then
   eval "cat <<-EOF
     $(</opt/postal/config/postal.template.yml)
 EOF
-  " | tee /opt/postal/config/postal.yml 2> /dev/null
+  " | tee /opt/postal/config/postal.example.yml 2> /dev/null
   /opt/postal/bin/postal initialize-config
 fi
 
