@@ -10,21 +10,22 @@ docker run -d \
 -p 5000:5000 \
 -e DB_MIGRATE=true \
 -e INIT_CONFIG=true \
--e main_db.host=postal-rabbit \
--e main_db.port=3306 \
--e main_db.database=postal \
--e main_db.username=postal \
--e main_db.password=postal \
--e message_db.host=postal-rabbit \
--e message_db.port=3306 \
--e message_db.database=postal \
--e message_db.username=postal \
--e message_db.password=postal \
--e rabbitmq.host=postal-rabbit \
--e rabbitmq.port=5672 \
--e rabbitmq.username=postal \
--e rabbitmq.password=postal \
--e rabbitmq.vhost=postal \
+-e USER_CREATE=true \
+-e MAIN_DB_HOST=postal-rabbit \
+-e MAIN_DB_PORT=3306 \
+-e MAIN_DB_DATABASE=postal \
+-e MAIN_DB_USERNAME=postal \
+-e MAIN_DB_PASSWORD=postal \
+-e MESSAGE_DB_HOST=postal-rabbit \
+-e MESSAGE_DB_PORT=3306 \
+-e MESSAGE_DB_PERFIX=postal \
+-e MESSAGE_DB_USERNAME=postal \
+-e MESSAGE_DB_PASSWORD=postal \
+-e RABBITMQ_HOST=postal-rabbit \
+-e RABBITMQ_PORT=5672 \
+-e RABBITMQ_USERNAME=postal \
+-e RABBITMQ_PASSWORD=postal \
+-e RABBITMQ_VHOST.vhost=postal \
 lukasmrtvy/postal:latest
 ```
 https://github.com/atech/postal/wiki/Spam-&-Virus-Checking
