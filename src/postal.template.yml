@@ -48,29 +48,29 @@ rabbitmq:
 
 dns:
   mx_records:
-    - ${dns.mx_records:-mx.postal.example.com}
-  smtp_server_hostname: ${dns.smtp_server_hostname:-postal.example.com}
-  spf_include: ${dns.spf_include:-spf.postal.example.com}
-  return_path: ${dns.return_path:-rp.postal.example.com}
-  route_domain: ${dns.route_domain:-routes.postal.example.com}
-  track_domain: ${dns.track_domain:-track.postal.example.com}
+    - ${DNS_MX_RECORDS:-mx.postal.example.com}
+  smtp_server_hostname: ${DNS_SMTP_SERVER_HOSTANME:-postal.example.com}
+  spf_include: ${DNS_SPF_INCLUDE:-spf.postal.example.com}
+  return_path: ${DNS.RETURN_PATH:-rp.postal.example.com}
+  route_domain: ${DNS_ROUTE_DOMAIN:-routes.postal.example.com}
+  track_domain: ${DNS_TRACK_DOMAIN:-track.postal.example.com}
 
 smtp:
-  host: ${smtp.host:-127.0.0.1}
-  port: ${smtp.port:-2525}
+  host: ${SMTP_HOST:-127.0.0.1}
+  port: ${SMTP_PORT:-2525}
   username: # Complete when Postal is running and you can
   password: # generate the credentials within the interface.
-  from_name: ${smtp.from_name:-Postal}
-  from_address: ${smtp.from_address:-postal@yourdomain.com}
-  tls_enabled: false
+  from_name: ${SMTP_FROM_NAME:-Postal}
+  from_address: ${SMTP_FROM_ADDRESS:-postal@yourdomain.com}
+  tls_enabled: ${SMTP_TLS_ENABLED:-false}
   tls_certificate_path: # Defaults to config/smtp.cert
   tls_private_key_path: # Defaults to config/smtp.key
-  tls_ciphers:
-  ssl_version: SSLv23
-  proxy_protocol: false
-  log_connect: true
-  strip_received_headers: false
-  max_message_size: 14 # size in Megabytes
+  tls_ciphers: ${SMTP_TLS_CIPHERS:-TLSv1_2}
+  ssl_version: ${SMTP_SSL_VERSION:-SSLv23}
+  proxy_protocol: ${SMTP_PROXY_PROTOCOL:-false}
+  log_connect: true ${SMTP_LOG_CONNECT:-true}
+  strip_received_headers: ${SMTP_STRIP_RECIEVED_HEADER:-false}
+  max_message_size: ${SMTP_MAX_MEESAGE_SIZE:-14}
 
 rails:
   secret_key: ${RAILS_SECRET_KEY:-$(openssl rand -base64 32)}
