@@ -72,6 +72,24 @@ smtp:
   strip_received_headers: ${SMTP_STRIP_RECIEVED_HEADER:-false}
   max_message_size: ${SMTP_MAX_MEESAGE_SIZE:-14}
 
+smtp_server:
+  port: 25
+  tls_enabled: false
+  tls_certificate_path: # Defaults to config/smtp.cert
+  tls_private_key_path: # Defaults to config/smtp.key
+  tls_ciphers:
+  ssl_version: SSLv23
+  proxy_protocol: false
+  log_connect: true
+  strip_received_headers: false
+  max_message_size: 14 # size in Megabytes
+
+smtp_relays:
+  -
+    hostname:
+    port: 25
+    ssl_mode: Auto
+
 rails:
   environment: ${RAILS_ENVIRONMENT:-production}
   secret_key: ${RAILS_SECRET_KEY:-$(openssl rand -base64 32)}
