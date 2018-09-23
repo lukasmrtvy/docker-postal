@@ -26,7 +26,7 @@ docker run -d \
 -e RABBITMQ_PORT=5672 \
 -e RABBITMQ_USERNAME=postal \
 -e RABBITMQ_PASSWORD=postal \
--e RABBITMQ_VHOST.vhost=postal \
+-e RABBITMQ_VHOST=postal \
 lukasmrtvy/postal:latest
 ```
 https://github.com/atech/postal/wiki/Spam-&-Virus-Checking
