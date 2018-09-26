@@ -86,7 +86,7 @@ smtp_server:
 
 smtp_relays:
   -
-    hostname: ${SMTP_RELAYS_HOSTNAME:-}
+    hostname: ${SMTP_RELAYS_HOSTNAME}
     port: ${SMTP_RELAYS_25:-25}
     ssl_mode: ${SMTP_RELAYS_SSL_MODE:-Auto}
 
