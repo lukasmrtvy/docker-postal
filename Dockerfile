@@ -7,7 +7,7 @@ ENV GROUP postal
 
 RUN   addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} ${GROUP} 
 
-RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor mariadb-client
+RUN apk add --no-cache ruby ruby-rdoc npm git bash supervisor mariadb-client openssl
 
 RUN mkdir -p /opt/postal && git clone https://github.com/atech/postal /opt/postal
 
