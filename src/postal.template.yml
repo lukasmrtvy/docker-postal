@@ -73,22 +73,22 @@ smtp:
   max_message_size: ${SMTP_MAX_MEESAGE_SIZE:-14}
 
 smtp_server:
-  port: 25
-  tls_enabled: false
+  port ${SMTP_SERVER_PORT:-25}
+  tls_enabled: ${SMTP_SERVER_TLS_ENABLED:-false}
   tls_certificate_path: # Defaults to config/smtp.cert
   tls_private_key_path: # Defaults to config/smtp.key
-  tls_ciphers:
-  ssl_version: SSLv23
-  proxy_protocol: false
-  log_connect: true
-  strip_received_headers: false
-  max_message_size: 14 # size in Megabytes
+  tls_ciphers: ${SMTP_TLS_CIPHERS:-TLSv1_2}
+  ssl_version: ${SMTP_SSL_VERSION:-SSLv23}
+  proxy_protocol: ${SMTP_PROXY_PROTOCOL:-false}
+  log_connect: true ${SMTP_LOG_CONNECT:-true}
+  strip_received_headers: ${SMTP_STRIP_RECEIVED_HEADERS:-false}
+  max_message_size: ${SMTP_MAX_MESSAGE_SIZE:-14}
 
 smtp_relays:
   -
-    hostname:
-    port: 25
-    ssl_mode: Auto
+    hostname: ${SMTP_RELAYS_HOSTNAME:-}
+    port: ${SMTP_RELAYS_25:-25}
+    ssl_mode: ${SMTP_RELAYS_SSL_MODE:-Auto}
 
 rails:
   environment: ${RAILS_ENVIRONMENT:-production}
