@@ -73,7 +73,7 @@ smtp:
   max_message_size: ${SMTP_MAX_MEESAGE_SIZE:-14}
 
 smtp_server:
-  port ${SMTP_SERVER_PORT:-25}
+  port: ${SMTP_SERVER_PORT:-25}
   tls_enabled: ${SMTP_SERVER_TLS_ENABLED:-false}
   tls_certificate_path: # Defaults to config/smtp.cert
   tls_private_key_path: # Defaults to config/smtp.key
