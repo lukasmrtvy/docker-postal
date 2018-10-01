@@ -6,6 +6,10 @@ web_server:
   bind_address: ${WEB_SERVER_BIND_ADDRESS:-127.0.0.1}
   port: ${WEB_SERVER_PORT:-5000}
   max_threads: ${WEB_SERVER_MAX_THREADS:-5}
+  ssl_enabled: ${WEB_SERVER_SSL_ENABLED:-false}
+  server_key: # Defaults to config/fast_server.key
+  server_crt: # Defaults to config/fast_server.cert
+  ssl_ciphers: # Defaults TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA
 
 fast_server:
   enabled: ${FAST_SERVER_ENABLED:-false}
