@@ -36,7 +36,7 @@ docker run -d --restart always --name spamd -p 783:783  dinkel/spamassassin
 ```
 
 ```
-docker run -d \
+docker rm -f postal-mariadb; docker run -d \
 --restart always \
 --network my-bridge \
 --name postal-mariadb \
@@ -44,12 +44,11 @@ docker run -d \
 -e MYSQL_DATABASE=postal \
 -e MYSQL_USER=postal \
 -e MYSQL_PASSWORD=postal \
--v postal-mariadb:/var/lib/mysql \
 mariadb:10.3.9-bionic
 ```
 
 ```
-docker run -d \
+docker rm -f postal-rabbit; docker run -d \
 --restart always \
 --network my-bridge \
 --hostname rabbit \
